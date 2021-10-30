@@ -50,7 +50,7 @@ t, p1 = dynamics.expectations(population1, real=True)
 print(t)
 print(list(p1))
 
-plt.plot(t, s_z, label=r'$P_1$')
+plt.plot(t, p1, label=r'$P_1$')
 plt.xlabel(r'$t$')
 plt.ylabel('Population 1')
 plt.legend()
