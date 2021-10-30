@@ -45,13 +45,13 @@ dynamics = tempo.tempo_compute(system=system,
 
 # Measure the population on state 1
 population1 = np.diag([1,0,0])
-t, s_z = dynamics.expectations(population1, real=True)
+t, p1 = dynamics.expectations(population1, real=True)
 
 print(t)
-print(list(s_z))
+print(list(p1))
 
 plt.plot(t, s_z, label=r'$P_1$')
 plt.xlabel(r'$t$')
-plt.ylabel(r'$<S_z>$')
+plt.ylabel('Population 1')
 plt.legend()
 plt.show()
