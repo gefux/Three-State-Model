@@ -33,14 +33,14 @@ sys_coup = np.diag([1, 0.4106715589673543, -0.5558270843261847])
 
 bath = tempo.Bath(sys_coup, correlations)
 
-tempo_parameters = tempo.TempoParameters(dt=0.00005, dkmax=4000, epsrel=10**(-4))
+tempo_parameters = tempo.TempoParameters(dt=0.0001, dkmax=4000, epsrel=10**(-4))
 
 # 1-picosencond-long dynamics
 dynamics = tempo.tempo_compute(system=system,
                                bath=bath,
                                initial_state=np.diag([1,0,0]),
                                start_time=0.0,
-                               end_time=0.018,
+                               end_time=0.19,
                                parameters=tempo_parameters)
 
 # Measure the population on state 1
