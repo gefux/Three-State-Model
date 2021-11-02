@@ -22,7 +22,7 @@ system = tempo.System(h1e)
 corr_single = lambda c, w, t, T:  c**2 * (np.cos(w*t) / np.tanh(w/2/T) - 1j * np.sin(w*t))
 corr = lambda t, T: np.sum([corr_single(c, w, t, T) for c, w in zip(c_list, w_list)])
 
-# Temperature 300K, when the time unit is ps
+# Temperature 300K, in a particular system of units
 temperature = 0.69*300
 custom_corr = lambda t: corr(t, temperature)
 
@@ -35,7 +35,7 @@ bath = tempo.Bath(sys_coup, correlations)
 
 tempo_parameters = tempo.TempoParameters(dt=0.0001, dkmax=4000, epsrel=10**(-4))
 
-# 1-picosencond-long dynamics
+# 1-picosencond-long dynamics, in a particular unit system.
 dynamics = tempo.tempo_compute(system=system,
                                bath=bath,
                                initial_state=np.diag([1,0,0]),
